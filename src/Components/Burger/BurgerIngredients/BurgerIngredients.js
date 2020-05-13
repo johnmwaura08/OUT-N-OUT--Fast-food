@@ -1,5 +1,6 @@
 /* eslint-disable default-case */
 import React, { Component } from 'react'
+//added proptypes package to check props i.e we want to ensure the prop-type of string is inputted in this instance
 import PropTypes from 'prop-types';
 
 
@@ -13,8 +14,8 @@ import classes from "./BurgerIngredients.css";
     
 
     let ingredient = null;
-
-    switch (props.type) {
+//inside a class you access props with this
+    switch (this.props.type) {
       case "bread-bottom":
         ingredient = <div className={classes.BreadBottom}></div>;
         break;
