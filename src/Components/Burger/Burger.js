@@ -9,12 +9,20 @@ const Burger = (props) => {
   {
     /* //our ingredients are an object that we have to transform the object into an array of the values of the BurgerIngredients */
   }
-  const transformedIngredients = Object.keys(props.ingredients).map((igr) => {
-    return [...Array(props.ingredients[igr])].map((_, i) => {
-      return
-      <BurgerIngredients key={igr + i} ttype={igr} />
+  let transformedIngredients = Object.keys(props.ingredients)
+                                      .map((igr) => {
+                   return [...Array(props.ingredients[igr])].map((_, i) => {
+               return <BurgerIngredients key={igr + i} type={igr} />
     });
-  });
+  })
+                                    .reduce((arr,el)=> {
+                                      return arr.concat(el)
+                                    },[]);
+
+      if (transformedIngredients.length === 0) {
+        transformedIngredients = <p>Please start adding ingredients!</p> //will only work if you use let instead of const when declaring transformed ingredients variable
+      }
+
   return (
     <div className={classes.Burger}>
       {/* //you have to add the prop type as well */}
