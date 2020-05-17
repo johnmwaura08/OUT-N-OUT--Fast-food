@@ -9,10 +9,10 @@ export class BurgerBuilder extends Component {
     //the keys are the names of the ingredients and the values is the amount
       ingredients: {
 
-        salad: 1,
-        bacon:2,
-        meat: 2,
-        cheese: 2
+        salad: 0,
+        bacon:0,
+        meat: 0,
+        cheese: 0
       }
       //we want to give our burger componet the ingredients
 
